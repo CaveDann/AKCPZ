@@ -9,3 +9,4 @@ Additional Kill Counters Mod for Project Zomboid
 * Add some text to the window
 * Make kill counters increment
 * Make kill counters look reasonable when added to a pre-existing game
+* Make kill counters persistent across restarts by writing to file
