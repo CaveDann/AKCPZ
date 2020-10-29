@@ -4,7 +4,7 @@ function AKCTab:initialise()
 end
 
 function DrawAKCTab()
-	AKCTab = AKCTab:new(70, 0, 250, 100)
+	AKCTab = AKCTab:new(70, 0, 250, 90)
 	AKCTab:addToUIManager();
 	AKCTab.pin = false;
 	AKCTab.resizable = true;
@@ -26,7 +26,7 @@ function AKCTab:createChildren()
 	ISCollapsableWindow.createChildren(self);
 	self.HomeWindow = ISRichTextPanel:new(0, 16, 250, 84);
 	self.HomeWindow:initialise();
-	self.HomeWindow.autosetheight = false;
+	self.HomeWindow.autosetheight = true;
 	self:addChild(self.HomeWindow);
 end
 
