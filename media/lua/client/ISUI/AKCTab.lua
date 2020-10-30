@@ -9,6 +9,7 @@ function DrawAKCTab()
 	AKCTab.pin = false;
 	AKCTab.resizable = true;
 	AKCTab:setVisible(true);
+	AKCStart.drawText();
 end
 
 function AKCTab:new(x, y, w, h)
