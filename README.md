@@ -7,7 +7,7 @@ Additional Kill Counters Mod for Project Zomboid
 * Start some lua (Done)
 * Get a window to generate (Done)
 * Add some text to the window (Done)
-* Build a complex string
+* Build a complex string (Done)
 * Make kill counters increment
 * Make kill counters look reasonable when added to a pre-existing game
 * Make kill counters persistent across restarts by writing to file
