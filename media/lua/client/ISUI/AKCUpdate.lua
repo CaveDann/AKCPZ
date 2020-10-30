@@ -1,9 +1,31 @@
 AKCUpdate = {}
 
+tk = 0;
+ogk = 0;
+ngk = 0;
+ok = 0;
+
 function AKCUpdate.updateText()
-    local zText = "Zombies Killed (Total): "..tostring(0).." <LINE> Zombies Killed (Weapons): "..tostring(1).." <LINE> Zombies Killed (Other): "..tostring(2);
+    ngk = 1 + getPlayer():getZombieKills();
+    if ogk ~= 0 then
+        local diff = ngk - ogk;
+        if diff > 1 then
+            tk = tk + diff;
+        elseif diff == 1 then
+            tk = tk + 1;
+        elseif diff == 0 then
+            tk = tk + 1;
+        end
+    else
+        tk = tk + 1;
+    end
+    --tk = tk + 1;
+    local gk = 1 + getPlayer():getZombieKills();
+    ok = tk - gk;
+    local zText = "Zombies Killed (Total): "..tostring(tk).." <LINE> Zombies Killed (Weapons): "..tostring(gk).." <LINE> Zombies Killed (Other): "..tostring(ok);
     AKCTab.HomeWindow.text = zText;
     AKCTab.HomeWindow:paginate();
+    ogk = gk;
 end
 
-Events.OnPlayerUpdate.Add(AKCUpdate.updateText);
+Events.OnZombieDead.Add(AKCUpdate.updateText);
