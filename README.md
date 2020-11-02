@@ -10,9 +10,10 @@ Additional Kill Counters Mod for Project Zomboid
 * Build a complex string (Done)
 * Make kill counters increment (Done)
 * Make kill counters look reasonable when added to a pre-existing game (Done)
-* Make kill counters persistent across restarts by writing to file
+* Make kill counters write to file (Done)
+* Make kill counters persistent across restarts by reading from file
 * Make kill counters reset on player death
-* Fix weird counting on early kills for game + 1 issue
+* Fix weird counting on early kills for game + 1 issue 
 
 ## Open Questions
 * Can we add a diff element to 'catch up' when a zombie vehicle kill fails to trigger an OnZombieDeath event?
