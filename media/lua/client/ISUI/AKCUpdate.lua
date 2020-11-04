@@ -1,10 +1,10 @@
 AKCUpdate = {}
 
-tk = 0;
+--[[tk = 0;
 ogk = 0;
 gk = 0;
 ngk = 0;
-ok = 0;
+ok = 0;]]--
 file = "AKCDataFile.txt"
 mod = "AKCPZ"
 
