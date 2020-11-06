@@ -14,8 +14,9 @@ Additional Kill Counters Mod for Project Zomboid
 * Make kill counters persistent across restarts by reading from file (Done)
 * Fix nil nil nil on new game (Done)
 * Make kill counters reset on player death (No work needed)
-* Fix weird counting on early kills for game + 1 issue 
+* Fix weird counting on early kills for game + 1 issue (Partial)
 * Fix window height
+* Make counters update every hour to ensure they're in sync
 
 ## Comments
 * Fix nil nil nil on new game
@@ -48,3 +49,5 @@ Additional Kill Counters Mod for Project Zomboid
   * You've commented out a bunch of stuff, stripped it down to not using the Test, and it still happens. So maybe it occurs somewhere in the Read. If not happening in the Read, then it happens as part of starting a game?
     * Can we prevent the use of the Read in the draw, and check if the file still becomes populated with nils? I.e., comment out line 13 in AKCStart.lua, so that it isn't used at all. Then launch the game and start a new game. If the file becomes populated with nils then it's either due to something in the game, or something in the way AKCStart.readData is working, or in the way it's being checked by the game before finishing loading. Odd that it works well when the game has written the file though. 
     * Perhaps another alternative to try is to get the game to check for the file, and if it isn't there, write the file to be filled with zeros. Perhaps the game has to have written the file itself to be able to read it properly. You could do another AKCPrepData function to facilitate this. 
+    
+* Can we update the kills every in-game hour so that they're out of sync for less time?
