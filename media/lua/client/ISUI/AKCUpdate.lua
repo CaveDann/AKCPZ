@@ -45,5 +45,16 @@ function AKCUpdate.writeData()
     writeData:close();
 end
 
+function AKCUpdate.hourlyData()
+    local tgk = getPlayer():getZombieKills();
+    local tdiff = tgk - gk;
+    local ttk = tk + tdiff;
+    local tok = ttk - tgk;
+    local zText = "Zombies Killed (Total): "..tostring(ttk).." <LINE> Zombies Killed (Weapons): "..tostring(tgk).." <LINE> Zombies Killed (Other): "..tostring(tok);
+    AKCTab.HomeWindow.text = zText;
+    AKCTab.HomeWindow:paginate();
+end
+
 Events.OnZombieDead.Add(AKCUpdate.updateText);
 Events.OnSave.Add(AKCUpdate.writeData);
+Events.EveryHours.Add(AKCUpdate.hourlyData);
