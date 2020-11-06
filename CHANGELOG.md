@@ -1,5 +1,8 @@
 # AKCPZ Changelog
 
+## v0.7.3
+* Refactor for Steam Workshop release
+
 ## v0.7.2
 * Add poster.png
 
