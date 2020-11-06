@@ -1,10 +1,10 @@
 AKCUpdate = {}
 
---[[tk = 0;
+tk = 0;
 ogk = 0;
 gk = 0;
 ngk = 0;
-ok = 0;]]--
+ok = 0;
 file = "AKCDataFile.txt"
 mod = "AKCPZ"
 
@@ -38,21 +38,6 @@ function AKCUpdate.writeData()
     writeData:write(tostring(ok).."\n");
     writeData:close();
 end
-
---[[AKCFile.testData = function(file)
-    local f = io.open(file, "rb");
-    if f then f:close() end;
-    return f ~= nil;
-end
-
-AKCFile.readData = function(file)
-    if not AKCFile.testData(file) then return {} end
-    lines = {}
-    for line in io.lines(file) do
-        lines[#lines + 1] = line;
-    end
-    return lines
-end]]--
 
 Events.OnZombieDead.Add(AKCUpdate.updateText);
 Events.OnSave.Add(AKCUpdate.writeData);
