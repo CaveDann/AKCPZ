@@ -1,5 +1,8 @@
 # AKCPZ Changelog
 
+## v0.7.5
+* Refactor for Steam Workshop release
+
 ## v0.7.4
 * Add preview.png
 
