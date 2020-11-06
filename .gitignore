@@ -1,4 +1,5 @@
 .idea
+Journal.md
 media/lua/client/ISUI/AKCFile.lua
 media/lua/client/ISUI/AKCIncrement.lua
 media/lua/client/ISUI/AKCPZStats.lua
