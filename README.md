@@ -17,7 +17,7 @@ Additional Kill Counters Mod for Project Zomboid
 * Fix weird counting on early kills for game + 1 issue (Partial)
 * Fix window height (Done)
 * Make counters update every hour to ensure they're in sync (Done)
-* Make AKCDataFile.txt generate zeros if not present
+* Make AKCDataFile.txt generate zeros if not present (Done)
 
 ## Comments
 * Fix nil nil nil on new game
