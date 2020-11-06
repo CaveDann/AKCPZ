@@ -1,5 +1,8 @@
 # AKCPZ Changelog
 
+## v0.7.2
+* Add poster.png
+
 ## v0.7.1
 * Update CHANGELOG.md
 * Update README.md
