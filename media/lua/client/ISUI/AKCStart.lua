@@ -46,26 +46,26 @@ function AKCStart.drawText()
 end
 
 function AKCStart.testData()
-    local f = getModFileReader(mod, file, true);
+    local f = getModFileReader(mod, file, false);
     if f then f:close() end
     return f ~= nil;
 end
 
 function AKCStart.readData()
-    if not AKCStart.testData() then return {} end
     lines = {}
-    local f = getModFileReader(mod, file, false)
-    --[[if f == nil or f == '' then
+    if not AKCStart.testData() then
         for i = 1,3 do
             line = 0;
             lines[#lines + 1] = line;
         end
-    else]]--
+        return lines
+    else
+        local f = getModFileReader(mod, file, false)
         for i = 1,3 do
             line = f:readLine();
             lines[#lines + 1] = line;
         end
-    --end
-    f:close();
-    return lines
+        f:close();
+        return lines
+    end
 end
