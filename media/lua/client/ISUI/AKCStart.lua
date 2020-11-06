@@ -7,11 +7,29 @@ file = "AKCDataFile.txt";
 mod = "AKCPZ";
 
 function AKCStart.drawText()
-    if AKCFile.testData() then
-        klist = AKCFile.readData();
-        stk = klist[1];
-        sgk = klist[2];
-        sok = klist[3];
+    if AKCStart.testData() then
+        klist = AKCStart.readData();
+        --[[if next(klist) == nil then
+            stk = 0;
+            sgk = 0;
+            sok = 0;
+        else]]--
+            stk = klist[1];
+            sgk = klist[2];
+            sok = klist[3];
+        --end
+        --[[if stk == nil or stk == '' then
+            stk = 0;
+        end
+        if not stk then
+            stk = 0;
+        end
+        if sgk == nil or sgk == '' then
+            sgk = 0;
+        end
+        if sok == nil or sok == '' then
+            sok = 0;
+        end]]--
         ok = sok;
     else
         stk = getPlayer():getZombieKills();
@@ -27,19 +45,27 @@ function AKCStart.drawText()
     AKCTab.HomeWindow:paginate();
 end
 
-function AKCFile.testData()
-    local f = getModFileReader(mod, file, false);
-    if f then f:close() end;
+function AKCStart.testData()
+    local f = getModFileReader(mod, file, true);
+    if f then f:close() end
     return f ~= nil;
 end
 
-function AKCFile.readData()
-    if not AKCFile.testData() then return {} end
+function AKCStart.readData()
+    if not AKCStart.testData() then return {} end
     lines = {}
-    local f = getModFileReader(mod, file, true)
-    for i = 1,3 do
-        line = f:readLine();
-        lines[#lines + 1] = line;
-    end
+    local f = getModFileReader(mod, file, false)
+    --[[if f == nil or f == '' then
+        for i = 1,3 do
+            line = 0;
+            lines[#lines + 1] = line;
+        end
+    else]]--
+        for i = 1,3 do
+            line = f:readLine();
+            lines[#lines + 1] = line;
+        end
+    --end
+    f:close();
     return lines
 end
