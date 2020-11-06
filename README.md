@@ -13,7 +13,7 @@ Additional Kill Counters Mod for Project Zomboid
 * Make kill counters write to file (Done)
 * Make kill counters persistent across restarts by reading from file (Done)
 * Fix nil nil nil on new game (Done)
-* Make kill counters reset on player death (Done)
+* Make kill counters reset on player death (No work needed)
 * Fix weird counting on early kills for game + 1 issue 
 * Fix window height
 
