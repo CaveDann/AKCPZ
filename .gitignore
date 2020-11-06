@@ -1,0 +1,5 @@
+.idea
+media/lua/client/ISUI/AKCFile.lua
+media/lua/client/ISUI/AKCIncrement.lua
+media/lua/client/ISUI/AKCPZStats.lua
+media/lua/client/ISUI/AKCStats.lua
