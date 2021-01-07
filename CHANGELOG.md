@@ -1,5 +1,8 @@
 # AKCPZ Changelog
 
+## v0.8.0
+* Add keybind to restore / hide the AKC window
+
 ## v0.7.5
 * Refactor for Steam Workshop release
 
