@@ -9,7 +9,7 @@ file = "AKCDataFile.txt"
 mod = "AKCPZ"
 
 function AKCUpdate.updateText()
-    ngk = 1 + getPlayer():getZombieKills();
+    ngk = getPlayer():getZombieKills();
     if ogk ~= 0 then
         local diff = ngk - ogk;
         if diff > 1 then --vehicle catchup clause
