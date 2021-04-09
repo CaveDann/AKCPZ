@@ -1,4 +1,4 @@
-# AKCPZ
+# AKCPZ (IWBUMS)
 Additional Kill Counters Mod for Project Zomboid
 
 ## To Do List

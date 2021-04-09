@@ -1,5 +1,8 @@
 # AKCPZ Changelog
 
+## v0.8.1
+* Fix double-counting of fire kills on IWBUMS release (09/04/2021)
+
 ## v0.8.0
 * Add keybind to restore / hide the AKC window
 
