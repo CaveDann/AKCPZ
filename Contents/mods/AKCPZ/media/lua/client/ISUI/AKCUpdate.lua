@@ -5,7 +5,8 @@ ogk = 0;
 gk = 0;
 ngk = 0;
 ok = 0;
-oflag = 0;
+akcflag1 = 0;
+akcflag2 = 0;
 file = "AKCDataFile.txt";
 mod = "AKCPZ-iwbums";
 
@@ -23,17 +24,25 @@ function AKCUpdate.updateText()
             gk = getPlayer():getZombieKills();
             ogk = gk;
         elseif diff == 0 then --kills not tracked by vanilla
-            if oflag == 0 then
+            if akcflag1 == 0 then
                 tk = tk + 1;
                 gk = getPlayer():getZombieKills();
                 ogk = gk;
-                oflag = 1;
+                akcflag1 = 1;
             else
-                oflag = 0;
+                akcflag1 = 0;
             end
         end
     else
-        tk = tk + 1;
+        if akcflag2 == 0 then
+            diff = 5;
+            tk = tk + 1;
+            gk = getPlayer():getZombieKills();
+            ogk = gk;
+            akcflag2 = 1;
+        else
+            akcflag2 = 0;
+        end
     end
     ok = tk - gk;
     local zText = "Zombies Killed (Total): "..tostring(tk).." <LINE> Zombies Killed (Weapons): "..tostring(gk).." <LINE> Zombies Killed (Other): "..tostring(ok);
