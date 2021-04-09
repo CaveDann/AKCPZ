@@ -20,22 +20,25 @@ function AKCUpdate.updateText()
             gk = 1 + getPlayer():getZombieKills();
             ogk = gk;--]]
         if diff == 1 then --standard +1
+            -- diff = 6;
             tk = tk + 1;
             gk = getPlayer():getZombieKills();
             ogk = gk;
         elseif diff == 0 then --kills not tracked by vanilla
             if akcflag1 == 0 then
+                -- diff = 7;
                 tk = tk + 1;
                 gk = getPlayer():getZombieKills();
                 ogk = gk;
                 akcflag1 = 1;
+                akcflag2 = 1;
             else
                 akcflag1 = 0;
             end
         end
     else
         if akcflag2 == 0 then
-            diff = 5;
+            -- diff = 5;
             tk = tk + 1;
             gk = getPlayer():getZombieKills();
             ogk = gk;
