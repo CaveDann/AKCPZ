@@ -6,27 +6,27 @@ gk = 0;
 ngk = 0;
 ok = 0;
 oflag = 0;
-file = "AKCDataFile.txt"
-mod = "AKCPZ"
+file = "AKCDataFile.txt";
+mod = "AKCPZ";
 
 function AKCUpdate.updateText()
-    ngk = 1 + getPlayer():getZombieKills();
+    local diff = 0;
+    ngk = getPlayer():getZombieKills();
     if ogk ~= 0 then
-        local diff = ngk - ogk;
-        if diff > 1 then --vehicle catchup clause
+        diff = ngk - ogk;
+        --[[if diff > 1 then --vehicle catchup clause
             tk = tk + diff;
             gk = 1 + getPlayer():getZombieKills();
-            ogk = gk;
-        elseif diff == 1 then --standard +1
+            ogk = gk;--]]
+        if diff == 1 then --standard +1
             tk = tk + 1;
-            gk = 1 + getPlayer():getZombieKills();
+            gk = getPlayer():getZombieKills();
             ogk = gk;
         elseif diff == 0 then --kills not tracked by vanilla
-            if oflag == 0 then --IWBUMS currently triggers OnZombieDead twice per fire kills
-                               --This flag alternates the function triggering on each call
+            if oflag == 0 then
                 tk = tk + 1;
                 gk = getPlayer():getZombieKills();
-                ogk = 1 + gk;
+                ogk = gk;
                 oflag = 1;
             else
                 oflag = 0;
@@ -35,13 +35,11 @@ function AKCUpdate.updateText()
     else
         tk = tk + 1;
     end
-    --tk = tk + 1;
-    --gk = 1 + getPlayer():getZombieKills();
     ok = tk - gk;
     local zText = "Zombies Killed (Total): "..tostring(tk).." <LINE> Zombies Killed (Weapons): "..tostring(gk).." <LINE> Zombies Killed (Other): "..tostring(ok);
+    -- local zText = "Zombies Killed (Total): "..tostring(tk).." <LINE> Zombies Killed (Weapons): "..tostring(gk).." <LINE> Zombies Killed (Other): "..tostring(ok).." <LINE> Ordered: "..tostring(ogk)..", "..tostring(ngk)..", "..tostring(diff);
     AKCTab.HomeWindow.text = zText;
     AKCTab.HomeWindow:paginate();
-    --ogk = gk;
 end
 
 function AKCUpdate.writeData()
