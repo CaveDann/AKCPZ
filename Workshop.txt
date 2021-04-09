@@ -1,4 +1,4 @@
-version=0.8.3
+version=0.8.4
 title=Additional Kill Counters (IWBUMS)
 Description=The Additional Kill Counters mod adds three additional counters to an in-game window which are able to track kills that the game wouldn't in vanilla (i.e. fire, falling, double-kills).
 tags=

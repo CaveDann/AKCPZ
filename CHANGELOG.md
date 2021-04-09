@@ -1,5 +1,9 @@
 # AKCPZ Changelog
 
+## v0.8.4
+* Fix issue where the first kill being a fire kill would double-count fire kills until a
+regular, vanilla-tracked kill occurred
+
 ## v0.8.3
 * Fix data file location issue #2
 
