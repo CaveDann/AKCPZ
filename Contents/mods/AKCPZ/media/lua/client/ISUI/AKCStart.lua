@@ -4,7 +4,7 @@ stk = 0;
 sgk = 0;
 sok = 0;
 file = "AKCDataFile.txt";
-mod = "AKCPZ";
+mod = "AKCPZ-iwbums";
 
 function AKCStart.drawText()
     if AKCStart.testData() then

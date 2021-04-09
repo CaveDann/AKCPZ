@@ -7,7 +7,7 @@ ngk = 0;
 ok = 0;
 oflag = 0;
 file = "AKCDataFile.txt";
-mod = "AKCPZ";
+mod = "AKCPZ-iwbums";
 
 function AKCUpdate.updateText()
     local diff = 0;
