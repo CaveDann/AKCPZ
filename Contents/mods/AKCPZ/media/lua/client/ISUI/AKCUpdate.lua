@@ -5,11 +5,12 @@ ogk = 0;
 gk = 0;
 ngk = 0;
 ok = 0;
+oflag = 0;
 file = "AKCDataFile.txt"
 mod = "AKCPZ"
 
 function AKCUpdate.updateText()
-    ngk = getPlayer():getZombieKills();
+    ngk = 1 + getPlayer():getZombieKills();
     if ogk ~= 0 then
         local diff = ngk - ogk;
         if diff > 1 then --vehicle catchup clause
@@ -21,9 +22,15 @@ function AKCUpdate.updateText()
             gk = 1 + getPlayer():getZombieKills();
             ogk = gk;
         elseif diff == 0 then --kills not tracked by vanilla
-            tk = tk + 1;
-            gk = getPlayer():getZombieKills();
-            ogk = 1 + gk;
+            if oflag == 0 then --IWBUMS currently triggers OnZombieDead twice per fire kills
+                               --This flag alternates the function triggering on each call
+                tk = tk + 1;
+                gk = getPlayer():getZombieKills();
+                ogk = 1 + gk;
+                oflag = 1;
+            else
+                oflag = 0;
+            end
         end
     else
         tk = tk + 1;
