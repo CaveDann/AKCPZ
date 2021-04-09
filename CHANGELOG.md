@@ -1,5 +1,13 @@
 # AKCPZ Changelog
 
+## v0.8.3
+* Fix data file location issue #2
+
+## v0.8.2
+* Fix kill counters out by 1 issue
+* Fix first kill counts as 2 issue
+* Fix data file location issue
+
 ## v0.8.1
 * Fix double-counting of fire kills on IWBUMS release (09/04/2021)
 
